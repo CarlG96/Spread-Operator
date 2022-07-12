@@ -52,3 +52,47 @@ const sumRest = (a,b,c, ...rest) => {
 }
 
 let sum3 = sumRest(1,2,3,4,5,6);
+
+//Destructuring arrays
+let ages = [30, 26, 27];
+//let john = ages[0];
+//let mary = ages[1];
+//let joe = ages[2];
+let [john, mary, joe] = ages; //assigns each variable in the array to the first in new array and so on. Basically creates three variables.
+console.log(john, mary, joe);
+
+//Destructuring objects
+let jobs = {
+    mike: "designer",
+    jill: "developer",
+    alicia: "accountant"
+};
+
+let {mike, jill, alicia} = jobs;
+console.log(mike, jill, alicia);
+
+//Destructuring subsets
+let languages = ["english", "french", "spanish", "german", "japanese"];
+let [johnNative, johnSecondary] = languages; //first two elements in array are assigned to variables johnNative and johnSecondary
+
+let [, , maryNative, marySecondary] = languages; //Assigns values but skips english and french with commas so variables are assigned spanish and german
+
+let languages2 = {
+    firstLanguage: "english",
+    secondLanguage: "french",
+    thirdLanguage: "spanish",
+    fourthLanguage: "german"
+};
+
+let {firstLanguage, thirdLanguage} = languages2; //returns english and spanish as these are keys in the object
+
+//Using rest parameter syntax
+let fruits = ["apple", "orange", "banana", "peach", "cherry"];
+let [favourite, secondFavourite, ...others] = fruits; //others becomes an array of the remaining elements
+let favouriteFoods = {
+    Brian: "pizza",
+    Sarah: "pasta",
+    Andrea: "steak",
+};
+let {brian, sarah, ...rest} = favouriteFoods; //rest becomes object of andrea: "steak"
+
